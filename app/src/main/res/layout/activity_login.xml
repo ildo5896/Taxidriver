@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/LOGINbutton" />
 
     <EditText
-        android:id="@+id/EMAILedit"
+        android:id="@+id/IDedit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -61,6 +61,18 @@
         android:inputType="numberPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EMAILedit" />
+        app:layout_constraintTop_toBottomOf="@+id/IDedit" />
+
+    <TextView
+        android:id="@+id/SEARCHtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="100dp"
+        android:text="가입 조회"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/REGISTERbutton" />
 
 </android.support.constraint.ConstraintLayout>

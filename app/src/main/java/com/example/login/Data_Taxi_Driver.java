@@ -45,4 +45,8 @@ public class Data_Taxi_Driver {
         this.PW = PW;
     }
     public boolean getAUTH(){ return AUTH;}
+
+    public void setAUTH(boolean AUTH) {
+        this.AUTH = AUTH;
+    }
 }

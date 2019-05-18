@@ -30,6 +30,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
+import java.util.HashMap;
 
 public class Register extends AppCompatActivity {
     Button GAINbutton,CORPORATIONbutton,GALLERYbutton,CAMERAbutton,REGISTERbutton;
@@ -107,12 +108,13 @@ public class Register extends AppCompatActivity {
     }
 
     void DIALOG(){
-        Data_Taxi_Driver data_taxi_driver = new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"",false);
-        mDatabase.child("taxi-driver").push().setValue(data_taxi_driver);
+        HashMap<String,Object> map = new HashMap<>();
+        map.put(NUMBERedit.getText().toString(),new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"",false));
+        mDatabase.child("taxi-driver").updateChildren(map);
         Upload_image();
         builder = new AlertDialog.Builder(this);
         builder.setTitle("신청 완료")
-                .setMessage("택시 기사 신청이 완료되었습니다.\n24시간이내에 가입 승인과 ID/PW를 알려드립니다.")
+                .setMessage("택시 기사 신청이 완료되었습니다.\n24시간이내에 가입 승인이 됩니다.")
                 .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
