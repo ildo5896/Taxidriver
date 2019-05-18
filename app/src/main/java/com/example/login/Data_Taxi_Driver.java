@@ -2,13 +2,15 @@ package com.example.login;
 
 public class Data_Taxi_Driver {
     private String ID,PW,NUMBER,POINT;
+    private boolean AUTH;
     public Data_Taxi_Driver(){ }
 
-    public Data_Taxi_Driver(String ID,String PW,String NUMBER,String POINT){
+    public Data_Taxi_Driver(String ID,String PW,String NUMBER,String POINT,boolean AUTH){
         this.ID = ID;
         this.PW = PW;
         this.NUMBER = NUMBER;
         this.POINT = POINT;
+        this.AUTH = AUTH;
     }
 
     public String getID() {
@@ -42,4 +44,5 @@ public class Data_Taxi_Driver {
     public void setPW(String PW) {
         this.PW = PW;
     }
+    public boolean getAUTH(){ return AUTH;}
 }
