@@ -28,20 +28,25 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class register2 extends AppCompatActivity {
-    TextView IDtext,PWtext;
-    EditText NUMBERedit,IDedit,PWedit;
-    Button SEARCHbutton,REGISTERbutton;
+    TextView IDtext,PWtext,PHONENUMBERtext;
+    EditText NUMBERedit,IDedit,PWedit,PHONENUMBERedit,AUTHedit;
+    Button SEARCHbutton,REGISTERbutton,PHONENUMBERbutton,AUTHbutton;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
     AlertDialog.Builder builder;
     void init(){
         IDtext = findViewById(R.id.IDtext);
         PWtext = findViewById(R.id.PWtext);
+        PHONENUMBERtext = findViewById(R.id.PHONENUMBERtext);
         NUMBERedit = findViewById(R.id.NUMBERedit);
         IDedit = findViewById(R.id.IDedit);
         PWedit = findViewById(R.id.PWedit);
+        PHONENUMBERedit = findViewById(R.id.PHONENUMBERedit);
+        AUTHedit = findViewById(R.id.AUTHedit);
         SEARCHbutton = findViewById(R.id.SEARCHbutton);
         REGISTERbutton = findViewById(R.id.REGISTERbutton);
+        PHONENUMBERbutton = findViewById(R.id.PHONENUMBERbutton);
+        AUTHbutton = findViewById(R.id.AUTHbutton);
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -156,7 +161,9 @@ public class register2 extends AppCompatActivity {
                                     ,PWedit.getText().toString()
                                     ,NUMBERedit.getText().toString()
                                     ,"0"
-                                    ,true));
+                                    ,""
+                                    ,true
+                                    ,false));
                             mDatabase.child("taxi-driver").updateChildren(map);
                             Toast.makeText(getApplicationContext(), "가입 성공!", Toast.LENGTH_SHORT).show();  //이메일 회원가입
                             DIALOG("완료","회원가입이 완료되었습니다.\n로그인 페이지로 이동하시겠습니까?");
@@ -164,5 +171,5 @@ public class register2 extends AppCompatActivity {
                         }
                     }
                 });
-    }
+    }//TODO : 전화번호 인증/확인코드 연동하기,  AUTH=true이고, id와 pw 가 있다면 있다는 메시지 출력후, LOGIN 페이지로 전환하기
 }

@@ -109,7 +109,7 @@ public class Register extends AppCompatActivity {
 
     void DIALOG(){
         HashMap<String,Object> map = new HashMap<>();
-        map.put(NUMBERedit.getText().toString(),new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"",false));
+        map.put(NUMBERedit.getText().toString(),new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"","",false,false));
         mDatabase.child("taxi-driver").updateChildren(map);
         Upload_image();
         builder = new AlertDialog.Builder(this);

@@ -1,16 +1,18 @@
 package com.example.login;
 
 public class Data_Taxi_Driver {
-    private String ID,PW,NUMBER,POINT;
-    private boolean AUTH;
+    private String ID,PW,NUMBER,POINT,PHONENUMBER;
+    private boolean AUTH,CALL;
     public Data_Taxi_Driver(){ }
 
-    public Data_Taxi_Driver(String ID,String PW,String NUMBER,String POINT,boolean AUTH){
+    public Data_Taxi_Driver(String ID,String PW,String NUMBER,String POINT,String PHONENUMBER,boolean AUTH,boolean CALL){
         this.ID = ID;
         this.PW = PW;
         this.NUMBER = NUMBER;
         this.POINT = POINT;
+        this.PHONENUMBER = PHONENUMBER;
         this.AUTH = AUTH;
+        this.CALL = CALL;
     }
 
     public String getID() {
@@ -29,6 +31,10 @@ public class Data_Taxi_Driver {
         return PW;
     }
 
+    public String getPHONENUMBER() {
+        return PHONENUMBER;
+    }
+    public boolean getCALL(){ return CALL;}
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -48,5 +54,13 @@ public class Data_Taxi_Driver {
 
     public void setAUTH(boolean AUTH) {
         this.AUTH = AUTH;
+    }
+
+    public void setPHONENUMBER(String PHONENUMBER) {
+        this.PHONENUMBER = PHONENUMBER;
+    }
+
+    public void setCALL(boolean CALL) {
+        this.CALL = CALL;
     }
 }

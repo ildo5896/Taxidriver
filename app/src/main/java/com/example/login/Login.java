@@ -19,18 +19,19 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
     public static Login LOGINactivity;
     private FirebaseAuth mAuth;
-    EditText EMAILedit,PASSWORDedit;
+    EditText IDedit,PASSWORDedit;
     Button LOGINbutton,REGISTERbutton;
     String ID,PW;
-    TextView SEARCHtext;
+    TextView SEARCHtext,LOSTtext;
     void init(){
         SharedPreferences DATA = getSharedPreferences("DATA", MODE_PRIVATE);
         SharedPreferences.Editor editor = DATA.edit();
 
         mAuth = FirebaseAuth.getInstance();
-        EMAILedit = findViewById(R.id.IDedit);
+        IDedit = findViewById(R.id.IDedit);
         PASSWORDedit = findViewById(R.id.PASSWORDedit);
         SEARCHtext = findViewById(R.id.SEARCHtext);
+        LOSTtext = findViewById(R.id.LOSTtext);
         LOGINbutton = findViewById(R.id.LOGINbutton);
         REGISTERbutton = findViewById(R.id.REGISTERbutton);
         ID = DATA.getString("ID","");
@@ -40,11 +41,13 @@ public class Login extends AppCompatActivity {
         LOGINbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ID.equals("") || PW.equals(""))
+                if(IDedit.getText().toString().equals("") || PASSWORDedit.getText().toString().equals(""))
                     Toast.makeText(getApplicationContext(),"ID와 PW를 입력해주세요.",Toast.LENGTH_SHORT).show();
-                ID = EMAILedit.getText().toString();
-                PW = PASSWORDedit.getText().toString();
-                firebaseAUTH(ID,PW);
+                else {
+                    ID = IDedit.getText().toString();
+                    PW = PASSWORDedit.getText().toString();
+                    firebaseAUTH(ID, PW);
+                }
             }
         });
         REGISTERbutton.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +62,12 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent SEARCHintent = new Intent(getApplicationContext(),register2.class);
                 startActivity(SEARCHintent);
+            }
+        });
+        LOSTtext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
@@ -86,6 +95,7 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) { // 로그인 성공
                             Intent LOGINintent = new Intent(getApplicationContext(),main.class);
+                            LOGINintent.putExtra("ID",ID);
                             startActivity(LOGINintent);
                             finish();
                         } else {
