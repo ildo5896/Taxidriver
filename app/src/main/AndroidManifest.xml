@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".findID"></activity>
+        <activity android:name=".findPassword"></activity>
+        <activity android:name=".findID" />
         <activity android:name=".call" />
         <activity android:name=".register2" />
         <activity android:name=".main" />
