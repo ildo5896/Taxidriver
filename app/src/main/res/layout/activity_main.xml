@@ -8,32 +8,70 @@
 
     <ToggleButton
         android:id="@+id/toggleButton"
-        android:layout_width="97dp"
-        android:layout_height="53dp"
+        android:layout_width="91dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="11dp"
         android:text="콜받기"
-        tools:layout_editor_absoluteX="298dp"
-        tools:layout_editor_absoluteY="87dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="89dp" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="124dp"
-        android:layout_height="38dp"
+        android:layout_width="0dp"
+        android:layout_height="33dp"
         android:layout_marginEnd="8dp"
-        android:text="콜받기"
+        android:text="실시간콜받기"
+        android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/toggleButton"
-        tools:layout_editor_absoluteY="89dp" />
+        tools:layout_editor_absoluteY="96dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="379dp"
-        android:layout_height="65dp"
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="395dp"
+        android:layout_height="453dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginBottom="8dp"
+        android:background="#BBD6E0"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@+id/textView5"/>
 
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="9dp"
+        android:background="#EBDADA"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:visibility="visible">
+
+
+    </FrameLayout>
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="106dp"
+        android:layout_height="31dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="116dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="124dp"
+        android:layout_height="32dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="263dp"
+        tools:layout_editor_absoluteY="37dp" />
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="57dp"
@@ -42,21 +80,83 @@
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="25dp" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="124dp"
-        android:layout_height="32dp"
-        android:layout_marginEnd="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        tools:layout_editor_absoluteY="37dp" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="하루"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="139dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="일주일"
+        tools:layout_editor_absoluteX="92dp"
+        tools:layout_editor_absoluteY="139dp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="한달"
+        tools:layout_editor_absoluteX="175dp"
+        tools:layout_editor_absoluteY="138dp" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="106dp"
-        android:layout_height="31dp"
+        android:id="@+id/textView11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="110dp"
+        android:gravity="right"
         android:text="TextView"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="38dp" />
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="136dp"
+        android:layout_marginEnd="8dp"
+        android:text="원"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView11"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="누적금액"
+        android:textSize="30sp"
+        android:textColor="#947418"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_disabled" />
 
 </android.support.constraint.ConstraintLayout>
