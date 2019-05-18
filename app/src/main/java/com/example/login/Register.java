@@ -107,7 +107,7 @@ public class Register extends AppCompatActivity {
     }
 
     void DIALOG(){
-        Data_Taxi_Driver data_taxi_driver = new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"");
+        Data_Taxi_Driver data_taxi_driver = new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"",false);
         mDatabase.child("taxi-driver").push().setValue(data_taxi_driver);
         Upload_image();
         builder = new AlertDialog.Builder(this);
