@@ -19,11 +19,12 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
     public static Login LOGINactivity;
     private FirebaseAuth mAuth;
-    EditText IDedit,PASSWORDedit;
-    Button LOGINbutton,REGISTERbutton;
-    String ID,PW;
-    TextView SEARCHtext,LOSTtext;
-    void init(){
+    EditText IDedit, PASSWORDedit;
+    Button LOGINbutton, REGISTERbutton;
+    String ID, PW;
+    TextView SEARCHtext, LOSTtext;
+
+    void init() {
         SharedPreferences DATA = getSharedPreferences("DATA", MODE_PRIVATE);
         SharedPreferences.Editor editor = DATA.edit();
 
@@ -33,16 +34,17 @@ public class Login extends AppCompatActivity {
         SEARCHtext = findViewById(R.id.SEARCHtext);
         LOSTtext = findViewById(R.id.LOSTtext);
         LOGINbutton = findViewById(R.id.LOGINbutton);
-        REGISTERbutton = findViewById(R.id.REGISTERbutton);
-        ID = DATA.getString("ID","");
-        PW = DATA.getString("PW","");
+        REGISTERbutton = findViewById(R.id.Register2Button);
+        ID = DATA.getString("ID", "");
+        PW = DATA.getString("PW", "");
     }
-    void click(){
+
+    void click() {
         LOGINbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(IDedit.getText().toString().equals("") || PASSWORDedit.getText().toString().equals(""))
-                    Toast.makeText(getApplicationContext(),"ID와 PW를 입력해주세요.",Toast.LENGTH_SHORT).show();
+                if (IDedit.getText().toString().equals("") || PASSWORDedit.getText().toString().equals(""))
+                    Toast.makeText(getApplicationContext(), "ID와 PW를 입력해주세요.", Toast.LENGTH_SHORT).show();
                 else {
                     ID = IDedit.getText().toString();
                     PW = PASSWORDedit.getText().toString();
@@ -53,14 +55,14 @@ public class Login extends AppCompatActivity {
         REGISTERbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent REGISTERintent = new Intent(getApplicationContext(),Register.class);
+                Intent REGISTERintent = new Intent(getApplicationContext(), Register_java.class);
                 startActivity(REGISTERintent);
             }
         });
         SEARCHtext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent SEARCHintent = new Intent(getApplicationContext(),register2.class);
+                Intent SEARCHintent = new Intent(getApplicationContext(), register2.class);
                 startActivity(SEARCHintent);
             }
         });
@@ -75,11 +77,10 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
         init();
         click();
-        if(!ID.equals("") && !PW.equals("")){
-            firebaseAUTH(ID,PW);
+        if (!ID.equals("") && !PW.equals("")) {
+            firebaseAUTH(ID, PW);
         }
     }
 
@@ -88,14 +89,14 @@ public class Login extends AppCompatActivity {
         super.onStart();
     }
 
-    void firebaseAUTH(String email,String password){
+    void firebaseAUTH(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) { // 로그인 성공
-                            Intent LOGINintent = new Intent(getApplicationContext(),main.class);
-                            LOGINintent.putExtra("ID",ID);
+                            Intent LOGINintent = new Intent(getApplicationContext(), main.class);
+                            LOGINintent.putExtra("ID", ID);
                             startActivity(LOGINintent);
                             finish();
                         } else {

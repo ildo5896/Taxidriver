@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".register2">
+    tools:context=".Register_2">
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="165dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/textview1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="1. 가입승인조회"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:textSize="13pt"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +31,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textview1" />
 
     <Button
         android:id="@+id/SEARCHbutton"
@@ -38,6 +40,9 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:text="확인"
+        android:textColor="#398377"
+        android:background="#E5C55D"
+        android:textSize="10pt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/NUMBERedit" />
 
@@ -45,13 +50,29 @@
         android:id="@+id/IDtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="68dp"
-        android:text="ID"
-        android:textColor="#000000"
+        android:layout_marginTop="20dp"
+        android:text="아이디"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="13pt"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/NUMBERedit" />
+        app:layout_constraintTop_toBottomOf="@+id/NameEdit" />
+
+    <TextView
+        android:id="@+id/NameText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="이름"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="13pt"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/IDedit"
@@ -61,22 +82,40 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="ID"
         android:inputType="textPersonName"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IDtext" />
 
+    <EditText
+        android:id="@+id/NameEdit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="30dp"
+        android:ems="10"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameText" />
+
     <TextView
         android:id="@+id/PWtext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
-        android:text="PASSWORD"
-        android:textColor="#000000"
+        android:text="비밀번호"
+        android:textSize="13pt"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/IDedit" />
 
@@ -96,14 +135,16 @@
         app:layout_constraintTop_toBottomOf="@+id/PWtext" />
 
     <TextView
-        android:id="@+id/PHONENUMBERtext"
+        android:id="@+id/NUMBERText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
         android:layout_marginTop="20dp"
-        android:text="PHONENUMBER"
-        android:textColor="#000000"
+        android:text="전화번호 인증"
+        android:textColor="#FFFFFF"
         android:visibility="invisible"
+        android:textSize="13pt"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PWedit" />
 
@@ -120,7 +161,7 @@
         android:visibility="invisible"
         app:layout_constraintEnd_toStartOf="@+id/PHONENUMBERbutton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PHONENUMBERtext" />
+        app:layout_constraintTop_toBottomOf="@+id/NUMBERText" />
 
     <Button
         android:id="@+id/PHONENUMBERbutton"
@@ -131,7 +172,7 @@
         android:text="인증"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PHONENUMBERtext" />
+        app:layout_constraintTop_toBottomOf="@+id/NUMBERText" />
 
     <EditText
         android:id="@+id/AUTHedit"
@@ -160,13 +201,16 @@
         app:layout_constraintTop_toBottomOf="@+id/PHONENUMBERedit" />
 
     <Button
-        android:id="@+id/REGISTERbutton"
+        android:id="@+id/Register2Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="25dp"
+        android:background="#E5C55D"
         android:text="등록"
+        android:textColor="#ffffff"
+        android:textSize="15pt"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

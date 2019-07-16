@@ -1,18 +1,28 @@
 package com.example.login;
 
 public class Data_Taxi_Driver {
-    private String ID,PW,NUMBER,POINT,PHONENUMBER;
+    private String ID,PW,NAME,NUMBER,PHONENUMBER;
+    private int POINT;
     private boolean AUTH,CALL;
     public Data_Taxi_Driver(){ }
 
-    public Data_Taxi_Driver(String ID,String PW,String NUMBER,String POINT,String PHONENUMBER,boolean AUTH,boolean CALL){
+    public Data_Taxi_Driver(String ID,String PW,String NAME,String NUMBER,int POINT,String PHONENUMBER,boolean AUTH,boolean CALL){
         this.ID = ID;
         this.PW = PW;
+        this.NAME = NAME;
         this.NUMBER = NUMBER;
         this.POINT = POINT;
         this.PHONENUMBER = PHONENUMBER;
         this.AUTH = AUTH;
         this.CALL = CALL;
+    }
+
+    public String getNAME() {
+        return NAME;
+    }
+
+    public void setNAME(String NAME) {
+        this.NAME = NAME;
     }
 
     public String getID() {
@@ -23,7 +33,7 @@ public class Data_Taxi_Driver {
         return NUMBER;
     }
 
-    public String getPOINT() {
+    public int getPOINT() {
         return POINT;
     }
 
@@ -43,7 +53,7 @@ public class Data_Taxi_Driver {
         this.NUMBER = NUMBER;
     }
 
-    public void setPOINT(String POINT) {
+    public void setPOINT(int POINT) {
         this.POINT = POINT;
     }
 

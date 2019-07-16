@@ -1,14 +1,11 @@
 package com.example.login;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.media.Image;
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -28,11 +25,10 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.InputStream;
 import java.util.HashMap;
 
-public class Register extends AppCompatActivity {
+public class Register_java extends AppCompatActivity {
     Button GAINbutton,CORPORATIONbutton,GALLERYbutton,CAMERAbutton,REGISTERbutton;
     EditText NUMBERedit;
     ImageView IMAGEview;
@@ -46,7 +42,7 @@ public class Register extends AppCompatActivity {
         CORPORATIONbutton = findViewById(R.id.CORPORATIONbutton);
         GALLERYbutton = findViewById(R.id.GALLERYbutton);
         CAMERAbutton = findViewById(R.id.CAMERAbutton);
-        REGISTERbutton = findViewById(R.id.REGISTERbutton);
+        REGISTERbutton = findViewById(R.id.Register2Button);
         NUMBERedit = findViewById(R.id.NUMBERedit);
         IMAGEview = findViewById(R.id.IMAGEview);
 
@@ -102,14 +98,14 @@ public class Register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+//        setContentView(R.layout.activity_register);
         init();
         click();
     }
 
     void DIALOG(){
         HashMap<String,Object> map = new HashMap<>();
-        map.put(NUMBERedit.getText().toString(),new Data_Taxi_Driver("","",NUMBERedit.getText().toString(),"","",false,false));
+        map.put(NUMBERedit.getText().toString(),new Data_Taxi_Driver("","","",NUMBERedit.getText().toString(),0,"",false,false));
         mDatabase.child("taxi-driver").updateChildren(map);
         Upload_image();
         builder = new AlertDialog.Builder(this);

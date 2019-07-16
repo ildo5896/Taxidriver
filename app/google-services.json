@@ -60,6 +60,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "804280661254-uql5og9qvjae6df2mkna626quo2edrog.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.taxi.newtaxi",
+            "certificate_hash": "10b5f9a6a3257aed5cdb1ce0aed9e1389275ebcb"
+          }
+        },
+        {
           "client_id": "804280661254-qcbtu0gadn2tbh3gc6va7ro2vqa4q5hk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -86,7 +94,8 @@
             }
           ]
         }
-      }
+      },
+      "admob_app_id": "ca-app-pub-7134346559226034~6481386011"
     },
     {
       "client_info": {
@@ -96,6 +105,22 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "804280661254-chntpe0d70kt1eqgmjl92fg4mqm5i1hh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.login",
+            "certificate_hash": "10b5f9a6a3257aed5cdb1ce0aed9e1389275ebcb"
+          }
+        },
+        {
+          "client_id": "804280661254-oav4dldoc1s272i9747nah9mn7lh2n23.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.login",
+            "certificate_hash": "feb626802e5b82ec5ef601f89125d9452016a9af"
+          }
+        },
         {
           "client_id": "804280661254-4qm4mlp3dli7ia7l7tujn9tvtvk4tkmh.apps.googleusercontent.com",
           "client_type": 1,

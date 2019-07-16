@@ -4,64 +4,72 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Login2">
 
     <Button
         android:id="@+id/LOGINbutton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="53dp"
         android:layout_marginEnd="6dp"
-        android:background="@color/colorPrimary"
+        android:layout_marginBottom="10dp"
+        android:background="#FCEA4F"
         android:text="로그인"
+        android:textColor="#000"
+        android:textSize="15pt"
+        app:layout_constraintBottom_toTopOf="@+id/Login_RegisterButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PASSWORDedit" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
-        android:id="@+id/REGISTERbutton"
+        android:id="@+id/Login_RegisterButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
-        android:layout_marginTop="13dp"
         android:layout_marginEnd="6dp"
-        android:background="@color/colorPrimary"
+        android:layout_marginBottom="15dp"
+        android:background="#FCEA4F"
         android:text="회원가입"
+        android:textSize="15pt"
+        android:textColor="#000"
+        app:layout_constraintBottom_toTopOf="@+id/SEARCHtext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LOGINbutton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/IDedit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="아이디/이메일"
+        android:textColor="#FFF"
+        android:textSize="15pt"
         android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/PASSWORDedit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/PASSWORDedit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="30dp"
         android:ems="10"
         android:hint="비밀번호"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
+        android:textColor="#fff"
+        android:textSize="15pt"
+        app:layout_constraintBottom_toTopOf="@+id/LOGINbutton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IDedit" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/LOSTtext"
@@ -80,11 +88,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
-        android:layout_marginTop="27dp"
         android:layout_marginEnd="100dp"
+        android:layout_marginBottom="30dp"
         android:text="가입 조회"
+        android:textSize="13pt"
+        app:layout_constraintBottom_toTopOf="@+id/LOSTtext"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/REGISTERbutton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

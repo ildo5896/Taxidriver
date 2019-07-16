@@ -21,7 +21,7 @@ import java.util.HashMap;
 
 public class main extends AppCompatActivity {
     ImageView PROFILEimage,DRIVERimage;
-    TextView NUMBERtext,PHONENUMBERtext,POINTtext;
+    TextView NameText,PHONENUMBERtext,POINTtext;
     Button CALLbutton,DAYbutton,MONTHbutton;
     String ID,PW;
     String TAXINUMBER,PHONENUMBER,PAY;
@@ -30,10 +30,9 @@ public class main extends AppCompatActivity {
         SharedPreferences DATA = getSharedPreferences("DATA", MODE_PRIVATE);
         SharedPreferences.Editor editor = DATA.edit();
 
-        PROFILEimage = findViewById(R.id.PROFILEimage);
-        DRIVERimage = findViewById(R.id.DRIVERimage);
-        NUMBERtext = findViewById(R.id.NUMBERtext);
-        PHONENUMBERtext = findViewById(R.id.PHONENUMBERtext);
+//        DRIVERimage = findViewById(R.id.DRIVERimage);
+        NameText = findViewById(R.id.NameText);
+        PHONENUMBERtext = findViewById(R.id.NUMBERText);
         POINTtext = findViewById(R.id.POINTtext);
         CALLbutton = findViewById(R.id.CALLbutton);
         DAYbutton = findViewById(R.id.DAYbutton);
@@ -50,7 +49,7 @@ public class main extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     Data_Taxi_Driver data_taxi_driver = snapshot.getValue(Data_Taxi_Driver.class);
-                    NUMBERtext.setText(data_taxi_driver.getNUMBER());
+                    NameText.setText(data_taxi_driver.getNUMBER());
                     PHONENUMBERtext.setText(data_taxi_driver.getPHONENUMBER());
                     POINTtext.setText(data_taxi_driver.getPOINT());
                 }
@@ -67,11 +66,11 @@ public class main extends AppCompatActivity {
                 if(CALLbutton.getText().toString().equals("OFF")){
                     CALLbutton.setText("ON");
                     map.put("call",true);
-                    mDatabase.child("taxi-driver").child(NUMBERtext.getText().toString()).updateChildren(map);
+                    mDatabase.child("taxi-driver").child(NameText.getText().toString()).updateChildren(map);
                 }else{
                     CALLbutton.setText("OFF");
                     map.put("call",false);
-                    mDatabase.child("taxi-driver").child(NUMBERtext.getText().toString()).updateChildren(map);
+                    mDatabase.child("taxi-driver").child(NameText.getText().toString()).updateChildren(map);
                 }//TODO : 횟수 제한 두기(DB 과부하 방지차원)
             }
         });
@@ -94,5 +93,6 @@ public class main extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         init();
         click();
+
     }
 }

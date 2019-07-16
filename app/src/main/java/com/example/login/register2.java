@@ -7,7 +7,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,14 +36,14 @@ public class register2 extends AppCompatActivity {
     void init(){
         IDtext = findViewById(R.id.IDtext);
         PWtext = findViewById(R.id.PWtext);
-        PHONENUMBERtext = findViewById(R.id.PHONENUMBERtext);
+        PHONENUMBERtext = findViewById(R.id.NUMBERText);
         NUMBERedit = findViewById(R.id.NUMBERedit);
         IDedit = findViewById(R.id.IDedit);
         PWedit = findViewById(R.id.PWedit);
         PHONENUMBERedit = findViewById(R.id.PHONENUMBERedit);
         AUTHedit = findViewById(R.id.AUTHedit);
         SEARCHbutton = findViewById(R.id.SEARCHbutton);
-        REGISTERbutton = findViewById(R.id.REGISTERbutton);
+        REGISTERbutton = findViewById(R.id.Register2Button);
         PHONENUMBERbutton = findViewById(R.id.PHONENUMBERbutton);
         AUTHbutton = findViewById(R.id.AUTHbutton);
 
@@ -97,7 +96,6 @@ public class register2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register2);
         init();
         click();
     }
@@ -159,8 +157,9 @@ public class register2 extends AppCompatActivity {
                             HashMap<String, Object> map = new HashMap<>();
                             map.put(NUMBERedit.getText().toString(),new Data_Taxi_Driver(IDedit.getText().toString()
                                     ,PWedit.getText().toString()
+                                    ,"park"
                                     ,NUMBERedit.getText().toString()
-                                    ,"0"
+                                    ,0
                                     ,""
                                     ,true
                                     ,false));
